@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Pro - Tu Tienda Fitness</title>
+    
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS para animaciones al scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- GSAP para animaciones avanzadas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- Navbar Mejorado -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <i class="fas fa-dumbbell me-2"></i>
+            <span>FullFit</span>
+        </a>
+
+        <!-- Buscador en Navbar -->
+        <form class="d-none d-md-flex mx-auto" onsubmit="return false;">
+            <div class="input-group nav-search">
+                <input type="search" 
+                       class="form-control form-control-sm" 
+                       placeholder="Buscar productos..." 
+                       id="navbarSearch"
+                       aria-label="Buscar">
+                <button class="btn btn-sm btn-primary" type="button" onclick="handleNavbarSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/productos.html">Productos</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="#" id="cartButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartCount" class="cart-badge badge rounded-pill bg-danger">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Hero Section con Video Background -->
+<header class="hero">
+    <div class="hero-content">
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3" data-aos="fade-up">SUPERA TUS LÍMITES</h1>
+                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">
+                        Encuentra todo lo que necesitas para alcanzar tus objetivos
+                    </p>
+                    <a href="pages/productos.html" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="400">
+                        Ver Productos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Categorías Destacadas -->
+    <!-- Categorías Destacadas -->
+<section class="categories py-5">
+    <div class="categories-bg">
+        <div class="container">
+            <h2 class="text-center mb-5 text-white" data-aos="fade-up">CATEGORÍAS DESTACADAS</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Suplementos</h3>
+                        <p>Potencia tu rendimiento</p>
+                        <a href="pages/productos.html?categoria=suplementos" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3>Ropa Fitness</h3>
+                        <p>Entrena con estilo</p>
+                        <a href="pages/productos.html?categoria=ropa" class="stretched-link"></a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Accesorios</h3>
+                        <p>Complementa tu entrenamiento</p>
+                        <a href="pages/productos.html?categoria=accesorios" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Call to Action -->
+    <section class="cta py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-white">
+                    <h2 data-aos="fade-right">¿Listo para comenzar?</h2>
+                    <p class="lead" data-aos="fade-right" data-aos-delay="100">
+                        Únete a nuestra comunidad y transforma tu vida
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left" data-aos-delay="200">
+                    <a href="pages/contacto.html" class="btn btn-light btn-lg">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Los items del carrito se insertarán aquí -->
+                    </div>
+                    <div class="text-end mt-3">
+                        <h5>Total: $<span id="cartTotal">0.00</span></h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" class="btn btn-primary" id="checkoutButton">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>PowerFit Pro</h5>
+                    <p>Tu tienda fitness de confianza</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/productos.html">Productos</a></li>
+                        <li><a href="pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Newsletter</h5>
+                    <form id="newsletterForm">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Tu email">
+                            <button class="btn btn-primary" type="submit">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Modal del Carrito para index.html -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    Carrito de Compras
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Estado del carrito vacío -->
+                <div id="emptyCart" class="text-center py-5" style="display: none;">
+                    <i class="fas fa-shopping-cart fa-4x text-muted mb-3"></i>
+                    <h4 class="text-muted">Tu carrito está vacío</h4>
+                    <p>¡Agrega algunos productos para comenzar!</p>
+                    <a href="pages/productos.html" class="btn btn-primary">
+                        Ir a Productos
+                    </a>
+                </div>
+
+                <!-- Contenido del carrito -->
+                <div id="cartContent">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartItems">
+                                <!-- Los items se insertarán aquí -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Resumen del carrito -->
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Código de descuento">
+                                        <button class="btn btn-outline-secondary" type="button">Aplicar</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-end">
+                                        <p class="mb-1">Subtotal: $<span id="cartSubtotal">0.00</span></p>
+                                        <p class="mb-1">Envío: $<span id="cartShipping">0.00</span></p>
+                                        <h4 class="mt-2">Total: $<span id="cartTotal">0.00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Seguir Comprando
+                </button>
+                <button type="button" class="btn btn-primary" id="checkoutButton">
+                    <i class="fas fa-lock me-2"></i>
+                    Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+   <!-- Modal del Carrito Mejorado -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-shopping-cart me-2"></i>
+                    Tu Carrito
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <!-- Estado del carrito vacío -->
+                <div id="emptyCart" class="text-center py-5" style="display: none;">
+                    <div class="empty-cart-animation mb-4">
+                        <i class="fas fa-shopping-cart fa-4x text-muted"></i>
+                        <div class="empty-cart-wave"></div>
+                    </div>
+                    <h4 class="text-muted mb-3">Tu carrito está vacío</h4>
+                    <p class="text-muted mb-4">¡Agrega algunos productos para comenzar!</p>
+                    <a href="productos.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-store me-2"></i>Ver Productos
+                    </a>
+                </div>
+
+                <!-- Contenido del carrito -->
+                <div id="cartContent">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartItems">
+                                <!-- Los items se insertarán aquí dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Resumen del carrito -->
+                    <div class="card cart-summary mt-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="coupon-section">
+                                        <h6 class="mb-3">¿Tienes un código de descuento?</h6>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Ingresa tu código">
+                                            <button class="btn btn-outline-primary" type="button">Aplicar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="cart-totals">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Subtotal:</span>
+                                            <span class="fw-bold">$<span id="cartSubtotal">0.00</span></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Envío:</span>
+                                            <span class="fw-bold">$<span id="cartShipping">0.00</span></span>
+                                        </div>
+                                        <div class="shipping-info small text-success mb-2">
+                                            <i class="fas fa-truck me-1"></i>
+                                            Envío gratis en compras mayores a $50
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex justify-content-between mb-0">
+                                            <h5>Total:</h5>
+                                            <h5 class="text-primary">$<span id="cartTotal">0.00</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-arrow-left me-2"></i>Seguir Comprando
+                </button>
+                <button type="button" class="btn btn-primary" id="checkoutButton">
+                    <i class="fas fa-check me-2"></i>Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notifications -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                <i class="fas fa-check-circle me-2"></i>
+                <span id="successToastMessage"></span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+    
+    <div id="errorToast" class="toast align-items-center text-white bg-danger border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <span id="errorToastMessage"></span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+    </div>
+</div> 
+</body>
+</html>
